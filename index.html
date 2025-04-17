@@ -1,157 +1,132 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<!DOCTYPE html><html lang="fa">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>گرلی شاپ</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>گرلی شاپ | 𝓰𝓲𝓻𝓵𝔂𝓼𝓱𝓸𝓹𝓶𝔃</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap');
-
-    body {
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: 'Vazirmatn', sans-serif;
-      margin: 0;
-      background-color: #ffeef8;
-      color: #333;
-      direction: rtl;
-    }
+    }body {
+  background: linear-gradient(to bottom right, #ffe6f0, #fff5fc);
+  color: #333;
+  padding: 2rem;
+}
 
-    header {
-      background-color: #ffb6d9;
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 2px 10px #f1a0c2;
-    }
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
+header h1 {
+  font-size: 2.5rem;
+  color: #d63384;
+}
 
-    header .logo {
-      font-family: cursive;
-      font-size: 1.2rem;
-      color: #fff;
-    }
+header .subtitle {
+  font-family: 'Brush Script MT', cursive;
+  color: #ff80aa;
+  font-size: 1.5rem;
+}
 
-    .container {
-      padding: 1rem;
-      display: grid;
-      gap: 1.5rem;
-    }
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
 
-    .product {
-      background-color: #fff0f7;
-      border-radius: 15px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      padding: 1rem;
-      max-width: 400px;
-    }
+.product {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition: transform 0.3s;
+}
 
-    .product img {
-      width: 100%;
-      border-radius: 10px;
-    }
+.product:hover {
+  transform: translateY(-5px);
+}
 
-    .product h2 {
-      margin-top: 0.5rem;
-      font-size: 1.2rem;
-      color: #c83e7e;
-    }
+.product img {
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+}
 
-    .product p {
-      font-size: 0.95rem;
-    }
+.product h3 {
+  color: #d63384;
+  margin-bottom: 0.5rem;
+}
 
-    .price {
-      font-weight: bold;
-      margin: 0.5rem 0;
-      color: #d83c91;
-    }
+.product p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
 
-    button {
-      background-color: #ff87c2;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 10px;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+.price {
+  color: #cc3366;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
 
-    button:hover {
-      background-color: #ff4a9d;
-    }
+.add-to-cart {
+  display: block;
+  width: 100%;
+  background-color: #ff99c8;
+  color: #fff;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
-    footer {
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: #777;
-    }
+.add-to-cart:hover {
+  background-color: #ff66a5;
+}
 
-    .socials {
-      margin-top: 1rem;
-    }
-
-    .socials a {
-      text-decoration: none;
-      color: #d83c91;
-      margin: 0 0.5rem;
-    }
   </style>
 </head>
 <body>
-
-<header>
-  <h1>گرلی شاپ</h1>
-  <div class="logo">𝓰𝓲𝓻𝓵𝔂𝓼𝓱𝓸𝓹𝓶𝔃</div>
-</header>
-
-<main class="container">
-
-  <div class="product">
-    <img src="baby-blue.jpg" alt="کره بدن بیبی آبی">
-    <h2>کره بدن Baby آبی برند کاریته</h2>
-    <p>👼🏻✨دارای رایحه ماندگار، ترکیبات مغذی، بهبود لک، روشن کننده، و رایحه نارگیل و بیسکوییت مادر🍼</p>
-    <div class="price">165,000 تومان</div>
-    <button>افزودن به سبد خرید</button>
-  </div>
-
-  <div class="product">
-    <img src="baby-pink.jpg" alt="کره بدن بیبی صورتی">
-    <h2>کره بدن Baby صورتی برند کاریته</h2>
-    <p>💗رایحه وانیلی، آبرسان قوی، جذب سریع، رفع خشکی و حجم 300g</p>
-    <div class="price">165,000 تومان</div>
-    <button>افزودن به سبد خرید</button>
-  </div>
-
-  <div class="product">
-    <img src="nutella.jpg" alt="کره بدن نوتلا">
-    <h2>کره بدن کاریته مدل نوتلا</h2>
-    <p>🍫ترکیب کاکائو، فندق، شی باتر؛ مناسب پوست، ترک، زانو، جذب سریع و حجم بالا</p>
-    <div class="price">165,000 تومان</div>
-    <button>افزودن به سبد خرید</button>
-  </div>
-
-  <div class="product">
-    <img src="victoria.jpg" alt="کره بدن ویکتوریا سکرت">
-    <h2>کره بدن ویکتوریا سکرت</h2>
-    <p>🍓با رایحه ویکتوریا، ماندگاری بالا، نرم‌کننده و لطیف‌کننده پوست</p>
-    <div class="price">165,000 تومان</div>
-    <button>افزودن به سبد خرید</button>
-  </div>
-
-</main>
-
-<footer>
-  برای سفارش از طریق 
-  <a href="https://wa.me/989334114538">واتساپ</a>
-  یا 
-  <a href="https://instagram.com/girlyshop_mz">اینستاگرام</a>
-  در ارتباط باشید
-</footer>
-
+  <header>
+    <h1>گرلی شاپ</h1>
+    <div class="subtitle">𝓰𝓲𝓻𝓵𝔂𝓼𝓱𝓸𝓹𝓶𝔃</div>
+  </header>
+  <section class="products">
+    <div class="product">
+      <img src="baby-blue.jpg" alt="کره بدن Baby آبی">
+      <h3>کره بدن Baby آبی برند کاریته</h3>
+      <p>✨ رایحه نارگیل و بیسکوییت مادر<br>🎀 نرم کننده و روشن کننده پوست<br>🎀 آبرسان و مغذی</p>
+      <div class="price">165,000 تومان</div>
+      <button class="add-to-cart">افزودن به سبد خرید</button>
+    </div>
+    <div class="product">
+      <img src="baby-pink.jpg" alt="کره بدن Baby صورتی">
+      <h3>کره بدن Baby صورتی برند کاریته</h3>
+      <p>💗 رایحه وانیلی<br>💗 بافت سبک و زودجذب<br>💗 آبرسانی قوی</p>
+      <div class="price">165,000 تومان</div>
+      <button class="add-to-cart">افزودن به سبد خرید</button>
+    </div>
+    <div class="product">
+      <img src="nutella.jpg" alt="کره بدن نوتلا">
+      <h3>کره بدن کاریته مدل نوتلا</h3>
+      <p>🍫 حاوی شی باتر، فندق و کره کاکائو<br>🧸 مناسب پوست و صورت<br>🤎 ترمیم‌کننده و مرطوب‌کننده</p>
+      <div class="price">165,000 تومان</div>
+      <button class="add-to-cart">افزودن به سبد خرید</button>
+    </div>
+    <div class="product">
+      <img src="victoria.jpg" alt="کره بدن ویکتوریا سکرت">
+      <h3>کره بدن ویکتوریا سکرت</h3>
+      <p>🍓 رایحه ویکتوریا<br>🍓 نرم کننده و مرطوب‌کننده پوست<br>🔥 با ماندگاری بالا</p>
+      <div class="price">165,000 تومان</div>
+      <button class="add-to-cart">افزودن به سبد خرید</button>
+    </div>
+  </section>
 </body>
 </html>
