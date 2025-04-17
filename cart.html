@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>سبد خرید</title>
+  <style>
+    body {
+      background-color: #ffe6f0;
+      font-family: 'Vazirmatn', sans-serif;
+      padding: 20px;
+      direction: rtl;
+      text-align: center;
+    }
+    h1 {
+      color: #ff66a3;
+    }
+    .cart-item {
+      background-color: #fff0f5;
+      margin: 15px auto;
+      padding: 15px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 0 10px rgba(255, 102, 163, 0.2);
+    }
+    img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .total {
+      margin-top: 30px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #d63384;
+    }
+  </style>
+</head>
+<body>
+  <h1>🛍️ سبد خرید شما</h1>
+  <div id="cart-items"></div>
+  <div class="total" id="total-price">جمع کل: ۰ تومان</div>
+
+  <script>
+    const cartItemsDiv = document.getElementById("cart-items");
+    const totalPriceDiv = document.getElementById("total-price");
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let total = 0;
+
+    if (cart.length === 0) {
+      cartItemsDiv.innerHTML = "<p>سبد خرید شما خالی است!</p>";
+    } else {
+      cart.forEach(item => {
+        const itemDiv = document.createElement("div");
+        itemDiv.classList.add("cart-item");
+        itemDiv.innerHTML = 
+          <h3>${item.name}</h3>
+          <img src="${item.image}" alt="${item.name}" />
+          <p>قیمت: ${item.price.toLocaleString()} تومان</p>
+          <p>تعداد: ${item.quantity}</p>
+        ;
+        cartItemsDiv.appendChild(itemDiv);
+        total += item.price * item.quantity;
+      });
+
+      totalPriceDiv.innerText = جمع کل: ${total.toLocaleString()} تومان;
+    }
+  </script>
+</body>
+</html>
