@@ -1,27 +1,22 @@
-let cart = [];
+// اضافه کردن محصول به سبد خرید
+function addToCart(productName, price, image) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-function addToCart(productName, price) {
-  cart.push({ name: productName, price: price });
-  alert(productName + " به سبد خرید اضافه شد!");
-  updateCartCount();
-}
+  const product = {
+    name: productName,
+    price: price,
+    image: image,
+    quantity: 1,
+  };
 
-function updateCartCount() {
-  const cartCount = document.getElementById("cart-count");
-  if (cartCount) {
-    cartCount.textContent = cart.length;
+  // بررسی اینکه آیا محصول از قبل توی سبد هست
+  const existing = cart.find(item => item.name === product.name);
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push(product);
   }
-}
 
-function showCart() {
-  let cartItems = "";
-  let total = 0;
-
-  cart.forEach(item => {
-    cartItems += <li>${item.name} - ${item.price.toLocaleString()} تومان</li>;
-    total += item.price;
-  });
-
-  document.getElementById("cart-items").innerHTML = cartItems || "<li>سبد خرید خالی است.</li>";
-  document.getElementById("cart-total").textContent = total.toLocaleString();
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert(${productName} به سبد خرید اضافه شد!);
 }
