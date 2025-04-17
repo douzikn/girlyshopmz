@@ -64,5 +64,13 @@
   💸 <strong>قیمت: 165,000 تومان</strong></p>
   <button onclick="addToCart('کره بدن Baby آبی', 165000)">افزودن به سبد خرید</button>
 </div>
-</body>
+  <script src="cart.js"></script>
+</body><div style="text-align:right;">
+  <button onclick="showCart()">سبد خرید (<span id="cart-count">0</span>)</button>
+</div>
 </html>
+<div id="cart" style="margin-top: 20px;">
+  <h3>سبد خرید:</h3>
+  <ul id="cart-items"></ul>
+  <p>مجموع: <span id="cart-total">0</span> تومان</p>
+</div>
