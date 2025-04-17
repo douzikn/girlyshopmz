@@ -35,10 +35,8 @@
   🎀 ترکیبات آبرسان و مغذی<br>
   🎀 نرم و لطیف کننده پوست<br>
   💸 <strong>قیمت: 165,000 تومان</strong></p>
-
   <button onclick="addToCart('کره بدن Baby آبی', 165000)">افزودن به سبد خرید</button>
 </div>
-
 <div style="background: #fff; margin: 20px auto; width: 80%; padding: 20px; border-radius: 20px; box-shadow: 0 0 15px #ffd6e8;">
   <h3>کره بدن صورتی Baby برند کاریته 😍🎀</h3>
   <p>💗 رایحه وانیلی<br>
@@ -47,7 +45,6 @@
   💸 <strong>قیمت: 165,000 تومان</strong></p
 <button onclick="addToCart('کره بدن Baby صورتی', 165000)">افزودن به سبد خرید</button>
 </div>
-
 <div style="background: #fff; margin: 20px auto; width: 80%; padding: 20px; border-radius: 20px; box-shadow: 0 0 15px #ffd6e8;">
   <h3>کره بدن کاریته مدل نوتلا 🍫😍</h3>
   <p>🤎 حاوی کره کاکائو و عصاره فندق و شی باتر<br>
@@ -56,7 +53,6 @@
   💸 <strong>قیمت: 165,000 تومان</strong></p>
  <button onclick="addToCart('کره بدن کاریته مدل نوتلا', 165000)">افزودن به سبد خرید</button>
 </div>
-
 <div style="background: #fff; margin: 20px auto; width: 80%; padding: 20px; border-radius: 20px; box-shadow: 0 0 15px #ffd6e8;">
   <h3>کره بدن ویکتوریا سکرت🔥🥹</h3>
   <p>🍓 با رایحه ویکتوریا<br>
@@ -72,25 +68,21 @@
 <p id="total-price">قیمت کل: ۰ تومان</p>
   <script>
   let cart = [];
-
   function addToCart(product, price) {
     cart.push({ product, price });
     updateCartDisplay();
   }
-
   function updateCartDisplay() {
     const cartList = document.getElementById('cart-list');
     const totalPrice = document.getElementById('total-price');
     cartList.innerHTML = '';
     let total = 0;
-
     cart.forEach(item => {
       const li = document.createElement('li');
       li.textContent = ${item.product} - ${item.price.toLocaleString()} تومان;
       cartList.appendChild(li);
       total += item.price;
     });
-
     totalPrice.textContent = قیمت کل: ${total.toLocaleString()} تومان;
   }
 </script>
