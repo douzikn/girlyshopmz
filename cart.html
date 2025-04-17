@@ -79,6 +79,117 @@
   font-size: 16px;
   font-weight: bold;
 ">پرداخت آنلاین</a>
+  <!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>سبد خرید | گرلی شاپ</title>
+  <style>
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      background-color: #ffe6f0;
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+    }
+
+    header {
+      background-color: #ff99cc;
+      padding: 20px;
+      text-align: center;
+      font-size: 26px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .cart-container {
+      max-width: 600px;
+      margin: 30px auto;
+      background-color: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(255, 153, 204, 0.3);
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 18px;
+    }
+
+    .total {
+      text-align: center;
+      font-size: 22px;
+      margin-top: 20px;
+      color: #e60073;
+      font-weight: bold;
+    }
+
+    .pay-button {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      margin-top: 20px;
+      background-color: #ff66aa;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .pay-button:hover {
+      background-color: #ff3385;
+    }
+
+    .empty {
+      text-align: center;
+      font-size: 18px;
+      color: gray;
+      margin: 50px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>سبد خرید شما</header>
+
+  <div class="cart-container" id="cart">
+    <!-- اینجا آیتم‌های سبد خرید به صورت داینامیک اضافه میشه -->
+  </div>
+
+  <script>
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartContainer = document.getElementById('cart');
+
+    if (cartItems.length === 0) {
+      cartContainer.innerHTML = '<p class="empty">سبد خرید شما خالی است</p>';
+    } else {
+      let total = 0;
+      cartItems.forEach(item => {
+        total += 165000;
+        cartContainer.innerHTML += 
+          <div class="cart-item">
+            <span>${item}</span>
+            <span>۱۶۵,۰۰۰ تومان</span>
+          </div>;
+      });
+
+      cartContainer.innerHTML += 
+        <p class="total">مبلغ کل: ${total.toLocaleString()} تومان</p>
+        <button class="pay-button" onclick="goToPayment()">پرداخت</button>;
+    }
+
+    function goToPayment() {
+      alert("درگاه پرداخت به‌زودی اضافه می‌شود!");
+    }
+  </script>
+
+</body>
+</html>
   </script>
 </body>
 </html>
