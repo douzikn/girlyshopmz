@@ -1,160 +1,200 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<!DOCTYPE html><html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>گرلی شاپ</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فروشگاه گيرلی شاپ</title>
   <style>
-    body {
-      font-family: 'Vazirmatn', sans-serif;
-      background-color: #fff0f5;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #ffb6c1;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 3px solid #ff69b4;
-    }
-    h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-    .logo {
-      font-family: "Vazirmatn";
-      font-size: 16px;
-      color: #fff;
-    }
-    .product-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 20px;
-      gap: 20px;
-    }
-    .product {
-      background-color: #fff;
-      border: 2px dashed #ffb6c1;
-      border-radius: 16px;
-      padding: 16px;
-      width: 280px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .product img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 10px;
-    }
-    .add-to-cart {
-      background-color: #ff69b4;
-      color: white;
-      border: none;
-      padding: 10px 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 10px;
-      font-size: 14px;
-    }
-    .price {
-      color: #d63384;
-      font-weight: bold;
-      margin-top: 8px;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Vazirmatn', sans-serif;
+}
+
+body {
+  background-color: #ffe6f0;
+  color: #333;
+  padding: 0 1rem;
+}
+
+header {
+  background-color: #ff99cc;
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: white;
+}
+
+header h2 {
+  font-size: 1.2rem;
+  color: white;
+  font-family: cursive;
+}
+
+nav {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  background-color: #ffb3d9;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background-color: #ff66a3;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.product {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.product img {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.product h3 {
+  margin: 0.5rem 0;
+}
+
+.product button {
+  background-color: #ff80bf;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.cart {
+  margin-top: 2rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.contact, .register {
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: #fff0f5;
+  border-radius: 1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #888;
+}
+
   </style>
 </head>
 <body>
   <header>
-    <h1>گرلی شاپ</h1>
-    <div class="logo">𝓰𝓲𝓻𝓵𝔂𝓼𝓱𝓸𝓹𝓶𝔃</div>
-  </header>
-
-  <section class="product-container">
-
-    <!-- محصول نوتلا -->
+    <h1>فروشگاه گيرلی شاپ</h1>
+    <h2>𝓰𝓲𝓻𝓵𝔂𝓼𝓱𝓸𝓹𝓶𝔃</h2>
+    <div>خوشگل بخرید، خوشگل بمونید! 💅✨</div>
+  </header>  <nav>
+    <a href="#products">محصولات</a>
+    <a href="#cart">سبد خرید</a>
+    <a href="#register">ثبت‌نام</a>
+    <a href="#contact">تماس با ما</a>
+  </nav>  <section id="products" class="products">
     <div class="product">
       <img src="nutella.jpg" alt="کره بدن نوتلا">
-      <h2>کره بدن کاریته مدل نوتلا 🍫😍</h2>
-      <p>
-        🤎 حاوی کره کاکائو و عصاره فندق و شی باتر <br>
-        🤎 بدون چربی و سبک <br>
-        🤎 مرطوب‌کننده قوی و اقتصادی <br>
-        🤎 برای صورت و بدن <br>
-        🤎 حجم: 300g
-      </p>
-      <div class="price">165,000 تومان ✨🛍</div>
-  <button class="add-to-cart" data-name="کره بدن نوتلا" data-price="165000">افزودن به سبد خرید</button>
+      <h3>کره بدن نوتلا 🍫</h3>
+      <p>قیمت: 165,000 تومان</p>
+      <button onclick="addToCart('نوتلا')">افزودن به سبد</button>
     </div>
-
-    <!-- بیبی آبی -->
     <div class="product">
-      <img src="baby-blue.jpg.jpg" alt="کره بدن بیبی آبی">
-      <h2>کره بدن Baby آبی برند کاریته 👼🏻✨</h2>
-      <p>
-        🎀 رایحه نارگیل و بیسکوییت مادر 🍼<br>
-        🎀 آبرسان، روشن‌کننده و نرم‌کننده پوست<br>
-        🎀 رفع لک و خشکی پوست
-      </p>
-      <div class="price">165,000 تومان ✨🛍</div>
-   <button class="add-to-cart" data-name="کره بدن Baby آبی" data-price="165000">افزودن به سبد خرید</button>
-
+      <img src="babyblue.jpg" alt="بیبی بلو">
+      <h3>کره بدن بیبی بلو 🍼💙</h3>
+      <p>قیمت: 165,000 تومان</p>
+      <button onclick="addToCart('بیبی بلو')">افزودن به سبد</button>
     </div>
-
-    <!-- بیبی صورتی -->
     <div class="product">
-      <img src="baby-pink.jpg.jpg" alt="کره بدن بیبی صورتی">
-      <h2>کره بدن صورتی Baby برند کاریته 😍🎀</h2>
-      <p>
-        💗 رایحه وانیلی<br>
-        💗 آبرسان قوی و بافت سبک<br>
-        💗 حجم: 300g<br>
-        💗 جلوگیری از خشکی پوست
-      </p>
-      <div class="price">165,000 تومان ✨🛍</div>
-    <button class="add-to-cart" data-name="کره بدن Baby صورتی" data-price="165000">افزودن به سبد خرید</button>
+      <img src="babypink.jpg" alt="بیبی پینک">
+      <h3>کره بدن بیبی پینک 🍼💕</h3>
+      <p>قیمت: 165,000 تومان</p>
+      <button onclick="addToCart('بیبی پینک')">افزودن به سبد</button>
     </div>
-
-    <!-- ویکتوریا سکرت -->
     <div class="product">
-      <img src="victoria-secret.jpg.jpg" alt="کره بدن ویکتوریا سکرت">
-      <h2>کره بدن ویکتوریا سکرت 🔥🥹</h2>
-      <p>
-        🍓 رایحه ویکتوریا <br>
-        🍓 لطیف کننده پوست <br>
-        🍓 مرطوب‌کننده قوی <br>
-        🍓 حجم: 300g
-      </p>
-      <div class="price">165,000 تومان ✨🛍</div>
-     <button class="add-to-cart" data-name="کره بدن ویکتوریا سکرت" data-price="165000">افزودن به سبد خرید</button>
+      <img src="victoria.jpg" alt="ویکتوریا سکرت">
+      <h3>کره بدن ویکتوریا سکرت 👑</h3>
+      <p>قیمت: 165,000 تومان</p>
+      <button onclick="addToCart('ویکتوریا سکرت')">افزودن به سبد</button>
     </div>
-<script src="cart.js"></script>
-  </section>
-  <a href="cart.html" style="
-  display: inline-block;
-  margin: 20px auto;
-  background-color: #ff66a3;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 20px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-">🛒 دیدن سبد خرید</a>
-  <script>
-  document.querySelectorAll('.add-to-cart').forEach(button => {
-    button.addEventListener('click', () => {
-      const name = button.dataset.name;
-      const price = button.dataset.price;
+  </section>  <section id="cart" class="cart">
+    <h3>سبد خرید شما 🛍️</h3>
+    <ul id="cart-items"></ul>
+    <p id="cart-total">مجموع: ۰ تومان</p>
+    <a id="whatsapp-link" href="#" target="_blank">
+      <button style="margin-top:1rem;">خرید از واتساپ 📲</button>
+    </a>
+  </section>  <section id="register" class="register">
+    <h3>ثبت‌نام مشتری جدید 📝</h3>
+    <form>
+      <label>نام:</label><br>
+      <input type="text" name="name" required><br><br>
+      <label>ایمیل:</label><br>
+      <input type="email" name="email" required><br><br>
+      <label>شماره تماس:</label><br>
+      <input type="tel" name="phone" required><br><br>
+      <button type="submit">ثبت‌نام</button>
+    </form>
+    </section>  <section id="contact" class="contact">
+    <h3>تماس با ما ☎️</h3>
+    <p>آیدی اینستاگرام: <a href="https://instagram.com/girlyshop_mz">@girlyshop_mz</a></p>
+    <p>واتساپ: <a href="https://wa.me/989334114538">09334114538</a></p>
+  </section>  <footer>
+    © 2025 گيرلی شاپ | طراحی با عشق ❤️ توسط دوزی و نورا
+  </footer>  <script>
+    let cart = [];
 
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      cart.push({ name, price });
-      localStorage.setItem('cart', JSON.stringify(cart));
-      alert(${name} به سبد خرید اضافه شد!);
-    });
-  });
-</script>
-  <script src="script.js"></script>
-</body>
+    function addToCart(product) {
+      cart.push(product);
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartItems = document.getElementById("cart-items");
+      const cartTotal = document.getElementById("cart-total");
+      const whatsappLink = document.getElementById("whatsapp-link");
+      cartItems.innerHTML = "";
+      let total = 0;
+      cart.forEach(item => {
+        total += 165000;
+        const li = document.createElement("li");
+        li.textContent = item + " - 165,000 تومان";
+        cartItems.appendChild(li);
+      });
+      cartTotal.textContent = "مجموع: " + total.toLocaleString() + " تومان";
+      whatsappLink.href = https://wa.me/989334114538?text=سلام، من این محصولات رو می‌خوام: %0A${cart.join('%0A')};
+    }
+  </script></body>
 </html>
