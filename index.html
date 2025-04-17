@@ -85,8 +85,7 @@
         🤎 حجم: 300g
       </p>
       <div class="price">165,000 تومان ✨🛍</div>
-      <button class="add-to-cart">افزودن به سبد خرید</button>
-      <button onclick="addToCart('نوتلا', 165000, 'images/nutella.jpg')">🛒 افزودن به سبد خرید</button>
+  <button class="add-to-cart" data-name="کره بدن نوتلا" data-price="165000">افزودن به سبد خرید</button>
     </div>
 
     <!-- بیبی آبی -->
@@ -99,8 +98,8 @@
         🎀 رفع لک و خشکی پوست
       </p>
       <div class="price">165,000 تومان ✨🛍</div>
-      <button class="add-to-cart">افزودن به سبد خرید</button>
-      <button onclick="addToCart('بیبی آبی', 165000, 'images/baby-blue.jpg.jpg')">🛒 افزودن به سبد خرید</button>
+   <button class="add-to-cart" data-name="کره بدن Baby آبی" data-price="165000">افزودن به سبد خرید</button>
+
     </div>
 
     <!-- بیبی صورتی -->
@@ -114,8 +113,7 @@
         💗 جلوگیری از خشکی پوست
       </p>
       <div class="price">165,000 تومان ✨🛍</div>
-      <button class="add-to-cart">افزودن به سبد خرید</button>
-      <button onclick="addToCart('بیبی صورتی', 165000, 'images/baby-pink.jpg.jpg')">🛒 افزودن به سبد خرید</button>
+    <button class="add-to-cart" data-name="کره بدن Baby صورتی" data-price="165000">افزودن به سبد خرید</button>
     </div>
 
     <!-- ویکتوریا سکرت -->
@@ -129,8 +127,7 @@
         🍓 حجم: 300g
       </p>
       <div class="price">165,000 تومان ✨🛍</div>
-      <button class="add-to-cart">افزودن به سبد خرید</button>
-      <button onclick="addToCart('ویکتوریا سکرت', 165000, 'images/victoria-secret.jpg.jpg')">🛒 افزودن به سبد خرید</button>
+     <button class="add-to-cart" data-name="کره بدن ویکتوریا سکرت" data-price="165000">افزودن به سبد خرید</button>
     </div>
 <script src="cart.js"></script>
   </section>
@@ -145,5 +142,18 @@
   font-weight: bold;
   font-size: 16px;
 ">🛒 دیدن سبد خرید</a>
+  <script>
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+      const name = button.dataset.name;
+      const price = button.dataset.price;
+
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ name, price });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(${name} به سبد خرید اضافه شد!);
+    });
+  });
+</script>
 </body>
 </html>
