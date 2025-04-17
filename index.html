@@ -30,7 +30,48 @@ header {<header>
       <li><a href="#cart" class="cart-icon">🛒</a></li>
     </ul>
   </nav>
-</header>
+</header><section id="products" class="products-section">
+  <h2>محصولات ما</h2>
+  <div class="product-grid">
+    
+    <!-- محصول ۱ -->
+    <div class="product-card">
+      <img src="baby-blue.jpg" alt="کره بدن Baby آبی">
+      <h3>کره بدن Baby آبی</h3>
+      <p>پوستتو مثل بچه‌ها لطیف و خوشبو کن!</p>
+      <span class="price">165,000 تومان</span>
+      <button class="add-to-cart">افزودن به سبد خرید</button>
+    </div>
+
+    <!-- محصول ۲ -->
+    <div class="product-card">
+      <img src="baby-pink.jpg" alt="کره بدن Baby صورتی">
+      <h3>کره بدن Baby صورتی</h3>
+      <p>با رایحه وانیلی، مخصوص پوستای حساس</p>
+      <span class="price">165,000 تومان</span>
+      <button class="add-to-cart">افزودن به سبد خرید</button>
+    </div>
+
+    <!-- محصول ۳ -->
+    <div class="product-card">
+      <img src="nutella.jpg" alt="کره بدن نوتلا">
+      <h3>کره بدن نوتلا</h3>
+      <p>بوی خوشمزه شکلاتی با قدرت آبرسانی بالا</p>
+      <span class="price">165,000 تومان</span>
+      <button class="add-to-cart">افزودن به سبد خرید</button>
+    </div>
+
+    <!-- محصول ۴ -->
+    <div class="product-card">
+      <img src="victoria.jpg" alt="کره بدن ویکتوریا سکرت">
+      <h3>کره بدن ویکتوریا سکرت</h3>
+      <p>رایحه خاص، لطافت خاص‌تر!</p>
+      <span class="price">165,000 تومان</span>
+      <button class="add-to-cart">افزودن به سبد خرید</button>
+    </div>
+
+  </div>
+</section>
   text-align: center;
   margin-bottom: 2rem;
 }
@@ -196,3 +237,75 @@ header .subtitle {
   </section>
 </body>
 </html>
+
+.products-section {
+  padding: 40px 20px;
+  background-color: #fff0f5;
+  text-align: center;
+}
+
+.products-section h2 {
+  font-family: "Vazirmatn", sans-serif;
+  font-size: 28px;
+  color: #d63384;
+  margin-bottom: 30px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+  padding: 0 10px;
+}
+
+.product-card {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 15px #ffd6e0;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  color: #ff69b4;
+  margin-bottom: 10px;
+}
+
+.product-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.price {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  color: #d63384;
+  margin-bottom: 10px;
+}
+
+.add-to-cart {
+  background-color: #ffb6c1;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Vazirmatn", sans-serif;
+}
+
+.add-to-cart:hover {
+  background-color: #ff69b4;
+}
