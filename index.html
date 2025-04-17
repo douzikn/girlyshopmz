@@ -70,6 +70,37 @@
       padding: 20px;
       margin-top: 20px;
     }
+    .cart-container {
+  background-color: #fff0f5;
+  border: 2px solid #ffb6c1;
+  padding: 1rem;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #ffc0cb;
+  display: none;
+}
+
+.cart-container h2 {
+  text-align: center;
+  color: #d63384;
+  font-size: 1.5rem;
+}
+
+#cartItems li {
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
+#cartItems button {
+  background: none;
+  border: none;
+  color: #ff69b4;
+  cursor: pointer;
+}
   </style>
 </head><body>
   <header>
@@ -87,6 +118,7 @@
       <p>✨ رایحه نارگیل و بیسکوییت مادر 🍼<br>🎀 نرم کننده، آبرسان و روشن‌کننده پوست</p>
       <p class="price">165,000 تومان ✨🛍</p>
       <button>افزودن به سبد خرید 🛒</button>
+     <button onclick="addToCart('کره بدن بیبی آبی', 165000)">افزودن به سبد خرید</button> 
     </div>
     <div class="product">
       <img src="images/baby-pink.jpg.jpg" alt="کره بدن صورتی" />
@@ -94,6 +126,7 @@
       <p>💗 رایحه وانیلی، آبرسان قوی<br>💗 بافت سبک و زودجذب</p>
       <p class="price">165,000 تومان ✨🛍</p>
       <button>افزودن به سبد خرید 🛒</button>
+      <button onclick="addToCart('کره بدن بیبی صورتی', 165000)">افزودن به سبد خرید</button>
     </div>
    <div class="product">
   <img src="images/nutella.jpg" alt="کره بدن نوتلا">
@@ -106,6 +139,7 @@
     💸 قیمت: 165,000 تومان
   </p>
   <button onclick="addToCart('نوتلا')">افزودن به سبد خرید</button>
+  <button onclick="addToCart('کره بدن نوتلا', 165000)">افزودن به سبد خرید</button> 
 </div>
     <div class="product">
       <img src="images/victoria-secret.jpg.jpg" alt="کره بدن ویکتوریا سکرت" />
@@ -113,9 +147,47 @@
       <p>🍓 رایحه ویکتوریا با ماندگاری بالا<br>🍓 نرم و لطیف کننده پوست</p>
       <p class="price">165,000 تومان 🛍✨</p>
       <button>افزودن به سبد خرید 🛒</button>
+      <button onclick="addToCart('کره بدن ویکتوریا سکرت', 165000)">افزودن به سبد خرید</button>
     </div>
   </section>  <footer id="contact">
     <p>آیدی اینستاگرام: <a href="https://instagram.com/girlyshop_mz">@girlyshop_mz</a></p>
     <p>واتس‌اپ: 09334114538</p>
   </footer>
+  <div class="cart-container" id="cartContainer">
+  <h2>سبد خرید</h2>
+  <ul id="cartItems"></ul>
+  <p id="totalPrice">مجموع: ۰ تومان</p>
+</div>
+  <script>
+  const cart = [];
+  const cartContainer = document.getElementById("cartContainer");
+  const cartItems = document.getElementById("cartItems");
+  const totalPriceEl = document.getElementById("totalPrice");
+
+  function addToCart(productName, price) {
+    cart.push({ name: productName, price: price });
+    updateCart();
+  }
+
+  function updateCart() {
+    cartContainer.style.display = "block";
+    cartItems.innerHTML = "";
+    let total = 0;
+
+    cart.forEach((item, index) => {
+      total += item.price;
+      const li = document.createElement("li");
+      li.innerHTML = ${item.name} - ${item.price.toLocaleString()} تومان <button onclick="removeItem(${index})">حذف</button>;
+      cartItems.appendChild(li);
+    });
+
+    totalPriceEl.innerText = مجموع: ${total.toLocaleString()} تومان;
+  }
+
+  function removeItem(index) {
+    cart.splice(index, 1);
+    updateCart();
+  }
+</script>
 </body></html>
+
