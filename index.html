@@ -2,141 +2,196 @@
 <html lang="fa">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>گرلی شاپ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: "Vazir", sans-serif;
-      direction: rtl;
-      background-color: #ffe6f0;
+      font-family: 'Vazirmatn', sans-serif;
+      background-color: #fff0f5;
       margin: 0;
       padding: 0;
     }
+
     header {
-      background-color: #ff99cc;
-      color: white;
-      padding: 20px;
+      background-color: #ffc0cb;
       text-align: center;
+      padding: 30px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: relative;
     }
+
     header h1 {
+      font-size: 2.5rem;
+      color: white;
       margin: 0;
-      font-size: 32px;
     }
+
     header h2 {
-      margin: 0;
-      font-size: 20px;
-      font-family: "cursive";
+      font-family: cursive;
+      color: white;
+      font-size: 1.2rem;
+      margin: 5px 0 0;
     }
-    .product-container {
+
+    #cart-count {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: #ff1493;
+      color: white;
+      border-radius: 50%;
+      padding: 6px 10px;
+      font-size: 0.9rem;
+    }
+
+    .products {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      margin: 20px;
+      padding: 40px 10px;
+      gap: 30px;
     }
+
     .product {
-      background: white;
+      background: #ffeaf4;
       border-radius: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      margin: 15px;
-      padding: 15px;
-      width: 280px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 220px;
       text-align: center;
+      transition: transform 0.3s;
     }
+
+    .product:hover {
+      transform: scale(1.05);
+    }
+
     .product img {
       width: 100%;
+      height: 180px;
+      object-fit: cover;
       border-radius: 15px;
     }
+
     .product h3 {
+      margin: 10px 0 5px;
       color: #d63384;
     }
+
     .product p {
-      text-align: justify;
-      font-size: 14px;
-      color: #333;
-    }
-    .price {
       font-weight: bold;
-      color: #c2185b;
-      margin: 10px 0;
+      margin: 5px 0 15px;
     }
-    button {
-      background-color: #ff66a3;
+
+    .product button {
+      background-color: #ff69b4;
       color: white;
       border: none;
-      padding: 10px 15px;
-      border-radius: 10px;
+      padding: 8px 16px;
+      border-radius: 15px;
       cursor: pointer;
-      transition: background-color 0.3s;
+      font-size: 0.9rem;
+      transition: background 0.3s;
     }
-    button:hover {
-      background-color: #ff3385;
+
+    .product button:hover {
+      background-color: #ff1493;
     }
-    footer {
+
+    .footer, .about {
       text-align: center;
+      margin: 40px 10px 20px;
+    }
+
+    .footer a {
+      text-decoration: none;
+      color: white;
+      background-color: #ff69b4;
+      padding: 10px 20px;
+      border-radius: 20px;
+      margin: 0 10px;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    .footer a:hover {
+      background-color: #ff1493;
+    }
+
+    .about {
+      background-color: #fff;
       padding: 20px;
-      background-color: #ffccdd;
-      margin-top: 40px;
+      border-radius: 20px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    @media(max-width: 600px) {
+      .products {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>گرلی شاپ</h1>
-  <h2>𝓰𝓲𝓻𝓵𝔂𝓼𝓱𝓸𝓹𝓶𝔃</h2>
-</header>
+  <header>
+    <h1>گرلی شاپ ✨</h1>
+    <h2>𝓰𝓲𝓻𝓵𝔂𝓼𝓱𝓸𝓹𝓶𝔃 💖</h2>
+    <div id="cart-count">🛒 0</div>
+  </header>
 
-<div class="product-container">
-  <!-- Baby Blue -->
-  <div class="product">
-    <img src="baby-blue.jpg" alt="کره بدن آبی">
-    <h3>کره بدن Baby آبی برند کاریته 👼🏻✨</h3>
-    <p>🎀 دارای رایحه ماندگار و جذاب<br>
-    🎀 ترکیبات آبرسان و مغذی<br>
-    🎀 روشن و شاداب کننده پوست<br>
-    ✨ رایحه نارگیل و بیسکوییت مادر 🍼</p>
-    <div class="price">قیمت: ۱۶۵,۰۰۰ تومان</div>
-    <button onclick="alert('محصول به سبد خرید اضافه شد!')">🛒 افزودن به سبد خرید</button>
+  <div class="products">
+
+    <div class="product">
+      <img src="images/nutella.jpg" alt="نوتلا">
+      <h3>کره بدن نوتلا 🍫</h3>
+      <p>165,000 تومان</p>
+      <button onclick="addToCart()">افزودن به سبد خرید</button>
+    </div>
+
+    <div class="product">
+      <img src="images/baby-blue.jpg.jpg" alt="بیبی بلو">
+      <h3>Baby Blue کره بدن 🩵</h3>
+      <p>165,000 تومان</p>
+      <button onclick="addToCart()">افزودن به سبد خرید</button>
+    </div>
+
+    <div class="product">
+      <img src="images/baby-pink.jpg.jpg" alt="بیبی پینک">
+      <h3>Baby Pink کره بدن 🌸</h3>
+      <p>165,000 تومان</p>
+      <button onclick="addToCart()">افزودن به سبد خرید</button>
+    </div>
+
+    <div class="product">
+      <img src="images/victoria-secret.jpg.jpg" alt="ویکتوریا سکرت">
+      <h3>Victoria Secret 💋</h3>
+      <p>165,000 تومان</p>
+      <button onclick="addToCart()">افزودن به سبد خرید</button>
+    </div>
+
   </div>
 
-  <!-- Baby Pink -->
-  <div class="product">
-    <img src="baby-pink.jpg" alt="کره بدن صورتی">
-    <h3>کره بدن Baby صورتی برند کاریته 😍🎀</h3>
-    <p>💗 رایحه وانیلی<br>
-    💗 آبرسانی قوی<br>
-    💗 رفع خشکی و زبری پوست</p>
-    <div class="price">قیمت: ۱۶۵,۰۰۰ تومان</div>
-    <button onclick="alert('محصول به سبد خرید اضافه شد!')">🛒 افزودن به سبد خرید</button>
+  <div class="about">
+    <h2>درباره ما ❤️</h2>
+    <p>گرلی‌شاپ فروشگاهی برای دخترای ناز و خوش‌سلیقه‌ست! ما با عشق بهترین کره بدن‌ها رو با رایحه‌های خاص براتون آوردیم. همه چی با تم صورتی و فانتزی که دوستش داری!</p>
+  </div>
+  <div class="footer">
+    <a href="https://wa.me/989334114538" target="_blank">واتساپ ما ✨</a>
+    <a href="https://instagram.com/girlyshop_mz" target="_blank">اینستاگرام ما 💕</a>
   </div>
 
-  <!-- Nutella -->
-  <div class="product">
-    <img src="nutella.jpg" alt="کره بدن نوتلا">
-    <h3>کره بدن کاریته مدل نوتلا 🍫😍</h3>
-    <p>🤎 حاوی کره کاکائو و عصاره فندق<br>
-    🤎 مناسب صورت، بدن، آرنج، پا<br>
-    🤎 رایحه ماندگار و بافت سبک</p>
-    <div class="price">قیمت: ۱۶۵,۰۰۰ تومان</div>
-    <button onclick="alert('محصول به سبد خرید اضافه شد!')">🛒 افزودن به سبد خرید</button>
-  </div>
-
-  <!-- Victoria Secret -->
-  <div class="product">
-    <img src="victoria.jpg" alt="کره بدن ویکتوریا">
-    <h3>کره بدن ویکتوریا سکرت 🔥🥹</h3>
-    <p>🍓 رایحه ویکتوریا<br>
-    🍓 ماندگاری بالا<br>
-    🍓 نرم و لطیف کننده پوست</p>
-    <div class="price">قیمت: ۱۶۵,۰۰۰ تومان</div>
-    <button onclick="alert('محصول به سبد خرید اضافه شد!')">🛒 افزودن به سبد خرید</button>
-  </div>
-</div>
-
-<footer>
-  <p>آیدی اینستاگرام: <b>@girlyshop_mz</b><br>
-  شماره واتس‌اپ: <b>09334114538</b></p>
-</footer>
+  <script>
+    let cart = 0;
+    function addToCart() {
+      cart++;
+      document.getElementById("cart-count").textContent = "🛒 " + cart;
+    }
+  </script>
 
 </body>
 </html>
