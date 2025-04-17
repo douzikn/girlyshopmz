@@ -85,7 +85,8 @@
     });
     totalPrice.textContent = قیمت کل: ${total.toLocaleString()} تومان;
   }
-</script>function submitOrder() {
+</script>
+  function submitOrder() {
   if (cart.length === 0) {
     document.getElementById('order-status').textContent = 'سبد خرید شما خالی است!';
     return;
