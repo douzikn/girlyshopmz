@@ -16,7 +16,21 @@
   padding: 2rem;
 }
 
-header {
+header {<header>
+  <nav class="navbar">
+    <div class="logo">
+      <span class="logo-fa">گرلی شاپ</span>
+      <span class="logo-en">𝓰𝓲𝓻𝓵𝔂𝓼𝓱𝓸𝓹𝓶𝔃</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">خانه</a></li>
+      <li><a href="#products">محصولات</a></li>
+      <li><a href="#about">درباره ما</a></li>
+      <li><a href="#contact">تماس با ما</a></li>
+      <li><a href="#cart" class="cart-icon">🛒</a></li>
+    </ul>
+  </nav>
+</header>
   text-align: center;
   margin-bottom: 2rem;
 }
@@ -91,7 +105,59 @@ header .subtitle {
   background-color: #ff66a5;
 }
 
-  </style>
+  </style>.navbar {
+  background-color: #ffe6f0;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px dashed #ffb6c1;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-family: "Vazirmatn", sans-serif;
+  text-align: right;
+}
+
+.logo-fa {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff69b4;
+}
+
+.logo-en {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 14px;
+  display: block;
+  color: #d63384;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-family: "Vazirmatn", sans-serif;
+  font-size: 16px;
+  color: #d63384;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #ff1493;
+}
+
+.cart-icon {
+  font-size: 20px;
+}
 </head>
 <body>
   <header>
